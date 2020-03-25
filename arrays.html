@@ -18,7 +18,7 @@
         console.log("Concat():");
         console.log(arr1);
     </script>
-
+    <hr/>
     <h2>Join()</h2>
     <p>Separa cada elemento do array por: -</p>
     <script>
@@ -34,9 +34,9 @@
         console.log(arr1);
         console.log(list);
     </script>
-
+    <hr />
     <h2>Push()</h2>
-    <p>Adiciona um novo elemento do array</p>
+    <p>Adiciona um novo elemento no final do array</p>
     <script>
         var arr3 = new Array("Red", 10, 20.4);
         arr3.push("New element");
@@ -45,7 +45,7 @@
         console.log("Join():")
         console.log(list)
     </script>
-
+    <hr />
     <h2>Pop()</h2>
     <p>Remove último elemento do array</p>
     <script>
@@ -55,7 +55,7 @@
         console.log("Pop():")
         console.log(list)
     </script>
-
+    <hr />
     <h2>Shift()</h2>
     <p>Remove primeiro elemento do array</p>
     <script>
@@ -64,6 +64,137 @@
         document.write("<p>shift:" + arr3 + "</p>");
         console.log("Shift():")
         console.log(list)
+    </script>
+    <hr />
+    <h2>UnShift()</h2>
+    <p>Faz o contrário do push, adiciona o elemento no início do array</p>
+    <script>
+        var arr1 = new Array("Red", 10, 20.4);
+        arr1.unshift("New element");
+        var list = arr1.join(" - ");
+        document.write("<p>Unshift():" + arr1 + "</p>");
+        console.log("unshift():");
+        console.log(arr1);
+    </script>
+    <hr />
+    <h2>Slice()</h2>
+    <p>Extrai uma seção de um array e devolve um novo array</p>
+    <script>
+        var arr1 = new Array("Red", 10, 20.4, "New element");
+        var newArray = arr1.slice(1, 4);
+        var list = newArray.join(" - ");
+        document.write("<p>Slice():" + arr1 + "</p>");
+        console.log("Slice():");
+        console.log(newArray);
+    </script>
+    <hr />
+    <h2>Splice()</h2>
+    <p>Escolhe um indice inicial e final e ele adiciona alguns elementos apartir do indice inicial</p>
+    <script>
+        var arr1 = new Array("Red", 10, 20.4, "New element");
+        arr1.splice(1, 2, "A", "B", "C", "D");
+        var list = arr1.join(" - ");
+        document.write("<p>Splice():" + arr1 + "</p>");
+        console.log("Splice():");
+        console.log(arr1);
+    </script>
+    <hr />
+    <h2>Reverse()</h2>
+    <p>Inverte a ordem dos dados</p>
+    <script>
+        var arr1 = new Array("A", "B", "C", "D", "E", "F");
+        arr1.reverse();
+        var list = arr1.join(" - ");
+        document.write("<p>Reverse():" + arr1 + "</p>");
+        console.log("Reverse():");
+        console.log(list);
+    </script>
+    <hr/>
+    <h2>Sort()</h2>
+    <p>Ordena os valores de um Array Crescente</p>
+    <script>
+        var arr1 = new Array(5, 8, 6, 0, 9, 6, 2, 4, 3, 1, 7);
+        arr1.sort();
+        var list = arr1.join(" - ");
+        document.write("<p>Sort():" + arr1 + "</p>");
+        console.log("Sort():");
+        console.log(list);
+    </script>
+    <hr/>
+    <h2>Sort() with callback</h2>
+    <p>Ordena os valores de um Array - Decrescente</p>
+    <script>
+        var arr1 = new Array(5, 8, 6, 0, 9, 6, 2, 4, 3, 1, 7);
+
+        function desc(a, b) {
+            if (a > b) {
+                return -1; // -1 manda os elementos para a direita
+            }
+            if (a < b) {
+                return 1; // 1 manda os elementos para a esquerda
+            }
+
+            if (a === b) {
+                return 0; // 0 mantém a posição do elemento
+            }
+        }
+        arr1.sort(desc);
+        var list = arr1.join(" - ");
+        document.write("<p>Sort():" + arr1 + "</p>");
+        console.log("Sort():");
+        console.log(list);
+    </script>
+    <hr/>
+    <h2>Sort()</h2>
+    <p>Ordena os valores de um Array Crescente</p>
+    <script>
+        var arr1 = new Array(5, 8, 6, 0, 9, 6, 2, 4, 3, 1, 7);
+        arr1.sort();
+        var list = arr1.join(" - ");
+        document.write("<p>Sort():" + arr1 + "</p>");
+        console.log("Sort():");
+        console.log(list);
+    </script>
+    <hr/>
+    <h2>Searh - indexOf()</h2>
+    <p>Busca por uma string em um array</p>
+    <script>
+        var arr1 = ["Laranja", "Azul", "Vermelha", "Azul", "Verde"];
+        var busca = arr1.indexOf("Verde");
+        document.write("<p>Busca: " + busca + " value = " + arr1[busca] + "</p>");
+        console.log("IndexOf()");
+        console.log(busca);
+    </script>
+    <hr/>
+    <h2>Searh - indexOf()</h2>
+    <p>indexOf(searchElement[,fromIndex])</p>
+    <script>
+        var arr1 = ["Laranja", "Azul", "Vermelha", "Azul", "Verde"];
+        var busca = arr1.indexOf("Azul", 2);
+        document.write("<p>Busca: " + busca + " value = " + arr1[busca] + "</p>");
+        console.log("IndexOf()");
+        console.log(busca);
+    </script>
+
+    <hr/>
+    <h2>Searh - indexOf()</h2>
+    <p>lastIndexOf - percorre de trás para frente</p>
+    <script>
+        var arr1 = ["Laranja", "Azul", "Vermelha", "Azul", "Verde"];
+        var busca = arr1.lastIndexOf("Azul");
+        document.write("<p>Busca: " + busca + " value = " + arr1[busca] + "</p>");
+        console.log("IndexOf()");
+        console.log(busca);
+    </script>
+    <hr/>
+    <h2>Searh - indexOf()</h2>
+    <p>lastIndexOf(searchElement[,fromIndex]) - percorre de trás para frente</p>
+    <script>
+        var arr1 = ["Laranja", "Azul", "Vermelha", "Azul", "Verde"];
+        var busca = arr1.lastIndexOf("Azul", 2);
+        document.write("<p>Busca: " + busca + " value = " + arr1[busca] + "</p>");
+        console.log("IndexOf()");
+        console.log(busca);
     </script>
 
 </html>
